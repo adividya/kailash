@@ -633,6 +633,34 @@ footer p {
   }
 }
 
+/* Sticky Map Layout (Desktop) */
+@media (min-width: 1024px) {
+  .trip-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal split */
+    gap: 4rem;
+    align-items: start; /* Crucial for sticky behavior */
+    position: relative;
+  }
+
+  .itinerary {
+    grid-column: 1; /* Left side */
+    margin: 0; /* Reset margins */
+  }
+
+  /* We need to select the map container specifically */
+  .trip-content .map-container {
+    grid-column: 2; /* Right side */
+    position: sticky; /* The Magic */
+    top: 120px; /* Offset for navbar */
+    height: 70vh; /* Taller on desktop */
+    max-height: 800px;
+    margin: 0; /* Reset margins */
+    border-radius: 8px; /* Nicer look */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+}
+
 /* Responsive */
 @media (max-width: 968px) {
   .hero h1 {
