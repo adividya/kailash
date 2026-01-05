@@ -16,7 +16,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: var(--text);
   line-height: 1.8;
-  overflow-x: hidden;
+  /* overflow-x: hidden;  <-- REMOVED: Breaks sticky positioning */
   background: var(--white);
 }
 
@@ -274,7 +274,8 @@ nav a:hover::after {
   background: var(--white);
   margin-bottom: 4rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  /* overflow: hidden; <-- REMOVED: Breaks sticky positioning of children */
+  border-radius: 8px; /* Added border-radius manually since overflow is gone */
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
