@@ -9,6 +9,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Leaflet Map CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+        #map { height: 100%; width: 100%; z-index: 1; }
+        .leaflet-popup-content-wrapper { border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; }
+        .leaflet-popup-tip-container { visibility: hidden; } /* Cleaner look */
+    </style>
   </head>
   <body>
     <nav id="navbar">
@@ -284,12 +292,7 @@
 
           <!-- Interactive Map Visualization -->
           <div class="map-container">
-            <!-- Updated to use generated asset instead of iframe -->
-            <img
-              src="assets/images/kailash_yatra_map_parchment.webp"
-              alt="Pilgrimage Route Map"
-              class="map-svg"
-            />
+            <div id="map"></div>
             <!-- In a full implementation, we would overlay SVG dots here corresponding to data-location -->
           </div>
 
@@ -467,5 +470,6 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/map.js"></script>
   </body>
 </html>
